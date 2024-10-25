@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch \"backend/**/*\" --exec \"ts-node backend/index.ts\""
+    "dev": "nodemon --watch \"backend/**/*\" --exec \"ts-node backend/index.ts\"",
+    "start": "ts-node dist/index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
