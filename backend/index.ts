@@ -62,11 +62,12 @@ app.use("/contracts", contractsRoute);
 app.use("/payments", paymentRoute);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/.next")));
+  app.use(express.static(path.join(__dirname, "frontend", ".next")));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", ".next"));
+    res.sendFile(path.resolve(__dirname, "frontend", ".next", "index.html"));
   });
 }
+
 app.listen(PORT, () => {
   console.log(`server started on ports ${PORT}`);
 });
